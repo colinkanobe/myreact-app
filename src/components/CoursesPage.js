@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getCourses } from "../api/courseApi";
+import CourseList from "./CourseList";
 
+/*
+//Commented out for now but this is an example of using Hooks(useState,useEffect)
+//In a function this is the modern approach 
 function CoursesPage() {
   const [courses, setCourses] = useState([]);
 
@@ -33,5 +37,17 @@ function CoursesPage() {
       </table>
     </>
   );
+}
+*/
+//Used Composing components here to pass data to component CourseList
+//It's an example of a controllerView with a toplevel component
+//CoursePage that passes data to another component CourseList
+function CoursesPage() {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    getCourses().then(_courses => setCourses(_courses));
+  }, []);
+  return <CourseList courses={courses} />;
 }
 export default CoursesPage;
