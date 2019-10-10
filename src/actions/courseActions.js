@@ -7,8 +7,19 @@ export function saveCourse(course) {
   return courseApi.saveCourse(course).then(saveCourse => {
     //Hey dispatcher go tell all the stores that a course was just created
     dispatcher.dispatch({
-      actionType: actionTypes.CREATE_COURSE,
+      actionType: course.id
+        ? actionTypes.UPDATE_COURSE
+        : actionTypes.CREATE_COURSE,
       course: saveCourse
+    });
+  });
+}
+export function deleteCourse(id) {
+  return courseApi.deleteCourse(id).then(() => {
+    //Hey dispatcher go tell all the stores to load courses
+    dispatcher.dispatch({
+      actionType: actionTypes.DELETE_COURSE,
+      id: id
     });
   });
 }

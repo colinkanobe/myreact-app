@@ -1,20 +1,6 @@
 {
   "courses": [
     {
-      "id": 1,
-      "title": "Securing React Apps with Auth0",
-      "slug": "react-auth0-authentication-security",
-      "authorId": 1,
-      "category": "JavaScript"
-    },
-    {
-      "id": 2,
-      "title": "React: The Big Picture",
-      "slug": "react-big-picture",
-      "authorId": 1,
-      "category": "JavaScript"
-    },
-    {
       "id": 3,
       "title": "Creating Reusable React Components",
       "slug": "react-creating-reusable-components",
@@ -57,13 +43,6 @@
       "category": "Software Architecture"
     },
     {
-      "id": 9,
-      "title": "Becoming an Outlier: Reprogramming the Developer Mind",
-      "slug": "career-reboot-for-developer-mind",
-      "authorId": 1,
-      "category": "Career"
-    },
-    {
       "id": 10,
       "title": "Web Component Fundamentals",
       "slug": "web-components-shadow-dom",
@@ -85,6 +64,30 @@
       "authorId": 1,
       "category": "dfdfdf",
       "createdAt": 1570660300199
+    },
+    {
+      "id": 13,
+      "slug": "xxxxxx",
+      "title": "xxxxxx",
+      "authorId": 2,
+      "category": "pole dancing",
+      "createdAt": 1570726985945
+    },
+    {
+      "id": 14,
+      "slug": "sol-2",
+      "title": "sol 2 ",
+      "authorId": 1,
+      "category": "sci fi",
+      "createdAt": 1570740885323
+    },
+    {
+      "id": 15,
+      "slug": "blad",
+      "title": "blad",
+      "authorId": 1,
+      "category": "asdgasdgasgh",
+      "createdAt": 1570742552268
     }
   ],
   "authors": [

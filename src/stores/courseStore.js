@@ -22,6 +22,9 @@ class CourseStore extends EventEmitter {
   getCourseBySlug(slug) {
     return _courses.find(course => course.slug === slug);
   }
+  deleteCourseById(id) {
+    return _courses.filter(course => course.id !== id);
+  }
 }
 const store = new CourseStore();
 Dispatcher.register(action => {
@@ -30,6 +33,20 @@ Dispatcher.register(action => {
       _courses.push(action.course);
       //Any time the store changes emitChange is
       //called(user added a new course then any react components registered with this store needs to be notified)
+      store.emitChange();
+      break;
+    case actionTypes.UPDATE_COURSE:
+      _courses = _courses.map(course =>
+        course.id === action.course.id ? action.course : course
+      );
+      //Any time the store changes emitChange is
+      //called(user added a new course then any react components registered with this store needs to be notified)
+      store.emitChange();
+      break;
+    case actionTypes.DELETE_COURSE:
+      _courses = _courses.filter(
+        course => course.id !== parseInt(action.id, 10)
+      );
       store.emitChange();
       break;
     case actionTypes.LOAD_COURSES:
